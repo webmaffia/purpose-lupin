@@ -18,10 +18,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   },
   callbacks: {
     authorized({ auth, request }) {
-      const { pathname, hostname } = request.nextUrl;
-
-      // TEMPORARY: skip auth on localhost for dev – remove before production
-      if (hostname === "localhost" || hostname === "127.0.0.1") return true;
+      const { pathname } = request.nextUrl;
 
       if (pathname.startsWith("/login") || pathname.startsWith("/api/auth")) {
         return true;
