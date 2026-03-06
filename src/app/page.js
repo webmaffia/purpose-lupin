@@ -14,7 +14,7 @@ export default async function Home() {
   // TEMPORARY: allow unauthenticated on localhost for dev – remove before production
   const host = (await headers()).get("host") ?? "";
   const isLocalhost = host.startsWith("localhost") || host.startsWith("127.0.0.1");
-  if (!session && !isLocalhost) {
+  if (!session) {
     redirect("/login");
   }
   return (
