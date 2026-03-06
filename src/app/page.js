@@ -7,6 +7,8 @@ import Framework from "@/components/Homepage/Framework";
 import Hope from "@/components/Homepage/Hope";
 import Purpose from "@/components/Homepage/Purpose";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const session = await auth();
   const headersList = await headers();
