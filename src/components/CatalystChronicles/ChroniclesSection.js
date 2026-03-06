@@ -14,7 +14,7 @@ const PROFILES = [
   { image: "/images/catylist/infinite/new/New folder/Maria_Cousins.png", dataBegin: 13.89, video: "/videos/cytalist/Maria Cousins video_1.mp4" },
   { image: "/images/catylist/infinite/new/New folder/Matthew_Duggan.png", dataBegin: 16.67, video: "/videos/cytalist/Matthew Duggan video.mp4" },
   { image: "/images/catylist/infinite/new/New folder/Mukul_Jerath.png", dataBegin: 19.44, video: "/videos/cytalist/Mukul Jerath video.mp4" },
-  { image: "/images/catylist/infinite/8.png", dataBegin: 22.22, video: "/videos/cytalist/Yolanda Cervantes video.mp4" },
+  { image: "/images/catylist/infinite/new/New folder/yolanda.png", dataBegin: 22.22, video: "/videos/cytalist/Yolanda Cervantes video.mp4" },
 ];
 
 export default function ChroniclesSection({ onProfileClick }) {

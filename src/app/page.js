@@ -11,8 +11,8 @@ export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const session = await auth();
-  const headersList = await headers();
-  const host = headersList.get("host") ?? "";
+  // TEMPORARY: allow unauthenticated on localhost for dev – remove before production
+  const host = (await headers()).get("host") ?? "";
   const isLocalhost = host.startsWith("localhost") || host.startsWith("127.0.0.1");
   if (!session && !isLocalhost) {
     redirect("/login");
