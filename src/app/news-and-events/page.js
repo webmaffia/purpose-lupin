@@ -58,6 +58,14 @@ export default function NewsAndEventsPage() {
     else if (diff < -50) setMobilePosition((p) => (p < totalCards - 1 ? p + 1 : 0));
   };
 
+  // Mobile carousel: auto loop
+  useEffect(() => {
+    const id = setInterval(() => {
+      setMobilePosition((p) => (p < totalCards - 1 ? p + 1 : 0));
+    }, 3500);
+    return () => clearInterval(id);
+  }, [country]);
+
   // Desktop 3D carousel: auto-rotate
   useEffect(() => {
     const carousel = carouselRef.current;
@@ -153,9 +161,9 @@ export default function NewsAndEventsPage() {
                   key={i}
                   className="mobile-card"
                   style={{
-                    transform: `translateX(${(i - mobilePosition) * -220}px) rotateY(${(i - mobilePosition) * 5}deg) scale(${i === mobilePosition ? 1 : 0.85})`,
-                    zIndex: totalCards - Math.abs(i - mobilePosition),
-                    opacity: i === mobilePosition ? 1 : Math.abs(i - mobilePosition) === 1 ? 0.45 : 0.2,
+                    transform: `translateX(${(i - mobilePosition) * 280}px) rotateY(${(i - mobilePosition) * 4}deg) scale(${i === mobilePosition ? 1 : 0.72})`,
+                    zIndex: i === mobilePosition ? 10 : totalCards - Math.abs(i - mobilePosition),
+                    opacity: i === mobilePosition ? 1 : Math.abs(i - mobilePosition) === 1 ? 0.28 : 0.08,
                   }}
                 >
                   <img src={src} alt="" />
