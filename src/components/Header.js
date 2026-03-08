@@ -60,7 +60,7 @@ export default function Header() {
             aria-label="Close menu"
             onClick={closeMenu}
           >
-            ×
+        <img src="/images/leadership/shapes/Group 400.png" alt="" width="32" height="32"/>
           </button>
           <nav className="site-header__nav-cards" aria-label="Main navigation">
             <Link href="/leadership" className="site-header__nav-card" onClick={closeMenu}>
