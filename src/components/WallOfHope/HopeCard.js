@@ -7,11 +7,13 @@ export default function HopeCard({
   role,
   country,
   imageSrc,
+  profileImageSrc,
   quote,
   positionClass,
   bgClass,
   cardBg,
 }) {
+  const profileImg = profileImageSrc ?? imageSrc;
   return (
     <div
       className={`hopes__mosaic-item ${positionClass} ${bgClass}`}
@@ -40,7 +42,17 @@ export default function HopeCard({
         </div>
         <div className="hopes__mosaic-back">
           <div className="hopes__mosaic-back-inner">
-            <p>{quote}</p>
+            <p className="hopes__mosaic-quote">{quote}</p>
+            <div className="hopes__mosaic-profile">
+              <Image
+                className="hopes__mosaic-profile-img"
+                src={profileImg}
+                alt={name}
+                width={160}
+                height={160}
+              />
+              <span className="hopes__mosaic-profile-name">{name}</span>
+            </div>
           </div>
           <Image
             className="hopes__mosaic-petals"
