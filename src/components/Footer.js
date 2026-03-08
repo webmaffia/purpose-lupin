@@ -10,10 +10,10 @@ export default function Footer() {
           <div className="footer__top">
             <nav className="footer__nav" aria-label="Footer navigation">
               <div className="footer__nav-col">
-                <Link href="/#news-events" className="footer__link">
+                <Link href="/news-and-events" className="footer__link">
                   <span className="footer__link-text">News &amp; Events</span>
                 </Link>
-                <Link href="/#purpose-highlights" className="footer__link">
+                <Link href="/purpose-highlights" className="footer__link">
                   <span className="footer__link-text">Purpose Highlights</span>
                 </Link>
                 <Link href="/wall-of-hope" className="footer__link">
@@ -76,16 +76,7 @@ export default function Footer() {
           </div>
           <div className="footer__divider" role="presentation"></div>
           <div className="footer__bottom">
-            <div className="footer__bottom-left">
-              <div className="footer__legal">
-                <Link href="#">Privacy</Link>
-                <span className="footer__sep">|</span>
-                <Link href="#">Disclaimer</Link>
-                <span className="footer__sep">|</span>
-                <Link href="#">Sitemap</Link>
-              </div>
-              <p className="footer__copyright">© 2025 Lupin. All Rights Reserved</p>
-            </div>
+           
             <Link
               href="https://www.lupin.com"
               target="_blank"

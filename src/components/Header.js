@@ -99,10 +99,10 @@ export default function Header() {
               <Link href="/wall-of-hope" onClick={closeMenu}>Wall of Hope</Link>
             </li>
             <li>
-              <Link href="/#news-events" onClick={closeMenu}>News &amp; Events</Link>
+              <Link href="/news-and-events" onClick={closeMenu}>News &amp; Events</Link>
             </li>
             <li>
-              <Link href="/#purpose-highlights" onClick={closeMenu}>Purpose Highlights</Link>
+              <Link href="/purpose-highlights" onClick={closeMenu}>Purpose Highlights</Link>
             </li>
           </ul>
           <nav className="site-header__utility" aria-label="Utility navigation">
@@ -110,11 +110,11 @@ export default function Header() {
               <span className="site-header__utility-link-text">Home</span>
             </Link>
             <span className="site-header__utility-sep" aria-hidden="true" />
-            <Link href="/#news-events" className="site-header__utility-link" onClick={closeMenu}>
+            <Link href="/news-and-events" className="site-header__utility-link" onClick={closeMenu}>
               <span className="site-header__utility-link-text">News &amp; Events</span>
             </Link>
             <span className="site-header__utility-sep" aria-hidden="true" />
-            <Link href="/#purpose-highlights" className="site-header__utility-link" onClick={closeMenu}>
+            <Link href="/purpose-highlights" className="site-header__utility-link" onClick={closeMenu}>
               <span className="site-header__utility-link-text">Purpose Highlights</span>
             </Link>
           </nav>
