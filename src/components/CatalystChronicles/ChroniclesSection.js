@@ -27,6 +27,7 @@ export default function ChroniclesSection({ onProfileClick }) {
   const unpauseTimeoutRef = useRef(null);
 
   useEffect(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(max-width: 414px)").matches) return;
     const svg = svgRef.current;
     const pathEl = pathRef.current;
     if (!svg || !pathEl) return;
@@ -113,6 +114,8 @@ export default function ChroniclesSection({ onProfileClick }) {
         </Link>
       </div>
       <div className="section-chronicles-bg__images" id="videos">
+        {/* Desktop: infinite + animated SVG (hidden on mobile) */}
+        <div className="section-chronicles-bg__images-desktop">
         <Image
           className="section-chronicles-bg__infinite"
           src="/images/catylist/infinite.svg"
@@ -287,6 +290,37 @@ export default function ChroniclesSection({ onProfileClick }) {
             </g>
           ))}
         </svg>
+        </div>
+        {/* Mobile: 3-column grid (visible only on mobile) */}
+        <div className="section-chronicles-bg__grid">
+          {PROFILES.map((profile, i) => (
+            <button
+              key={i}
+              type="button"
+              className="section-chronicles-bg__grid-item js-chronicles-play"
+              aria-label="Play video"
+              onClick={(e) => {
+                e.preventDefault();
+                onProfileClick?.(profile.video);
+              }}
+            >
+              <span className="section-chronicles-bg__grid-avatar">
+                <Image
+                  src={profile.image}
+                  alt=""
+                  width={90}
+                  height={90}
+                />
+              </span>
+              <span className="section-chronicles-bg__grid-play" aria-hidden="true">
+                <svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M28.55 14.73L49.1 27 28.55 39.27V14.73Z" fill="#048B35" />
+                  <path d="M35.23 54C23.21 54.11 12.17 46.14 8.91 34C5.06 19.59 13.6 4.78 28 0.93C42.4-2.93 57.2 5.61 61.06 20C64.92 34.4 56.38 49.2 42 53.07C39.73 53.68 37.46 53.97 35.23 54ZM28.56 39.21L49.14 27 28.56 14.78V39.21Z" fill="white" />
+                </svg>
+              </span>
+            </button>
+          ))}
+        </div>
       </div>
     </section>
   );

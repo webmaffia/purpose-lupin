@@ -1,0 +1,11 @@
+/**
+ * jash.css – override globals.css when needed.
+ */
+
+/* Mobile: catalyst grid avatar full size */
+@media (max-width: 414px) {
+  .section-chronicles-bg__grid-avatar {
+    width: 100%;
+    height: 100%;
+  }
+}

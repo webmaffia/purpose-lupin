@@ -20,7 +20,6 @@ html:focus-within {
     scroll-behavior: smooth
 }
 
-
 html,
 body {
     height: 100%
@@ -4589,6 +4588,14 @@ body.site-header-menu-open .site-header__hamburger-bar:nth-child(3) {
     box-sizing: border-box
 }
 
+.section-chronicles-bg__images-desktop {
+    display: block
+}
+
+.section-chronicles-bg__grid {
+    display: none
+}
+
 .section-chronicles-bg__infinite {
     width: 100%;
     height: auto;
@@ -4738,6 +4745,63 @@ body.site-header-menu-open .site-header__hamburger-bar:nth-child(3) {
         opacity: 0.85
     }
 
+    .section-chronicles-bg__images-desktop {
+        display: none
+    }
+
+    .section-chronicles-bg__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4.8309178744vw;
+        margin-top: 4.8309178744vw
+    }
+
+    .section-chronicles-bg__grid-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none
+    }
+
+    .section-chronicles-bg__grid-avatar {
+        position: relative;
+        width: 21.7391304348vw;
+        height: 21.7391304348vw;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid #0CC950;
+        flex-shrink: 0
+    }
+
+    .section-chronicles-bg__grid-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block
+    }
+
+    .section-chronicles-bg__grid-play {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 16.9082125604vw;
+        height: 16.9082125604vw;
+        pointer-events: none
+    }
+
+    .section-chronicles-bg__grid-play svg {
+        width: 100%;
+        height: 100%
+    }
+
     .section-chronicles-bg__profile-wrap image {
         width: 19.3236714976vw;
         height: 19.3236714976vw;
@@ -4773,6 +4837,79 @@ body.site-header-menu-open .site-header__hamburger-bar:nth-child(3) {
 
     .section-chronicles-bg__images {
         margin-top: 5.79710144928vw
+    }
+
+    .section-chronicles-bg__images-desktop {
+        display: none
+    }
+
+    .section-chronicles-bg__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3.86473429952vw;
+        width: 100%;
+        margin-top: 4.8309178744vw
+    }
+
+    .section-chronicles-bg__grid-item {
+        position: relative;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        aspect-ratio: 1;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        padding: 0;
+        -webkit-border-radius: 50%;
+        border-radius: 50%
+    }
+
+    .section-chronicles-bg__grid-avatar {
+        position: absolute;
+        inset: 0;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid #0CC950
+    }
+
+    .section-chronicles-bg__grid-avatar img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        display: block
+    }
+
+    .section-chronicles-bg__grid-play {
+        position: relative;
+        z-index: 1;
+        width: 10.6280193237vw;
+        height: 10.6280193237vw;
+        opacity: 0;
+        -webkit-transition: opacity 0.2s ease;
+        transition: opacity 0.2s ease
+    }
+
+    .section-chronicles-bg__grid-play svg {
+        width: 100%;
+        height: 100%;
+        display: block
+    }
+
+    .section-chronicles-bg__grid-item:hover .section-chronicles-bg__grid-play,
+    .section-chronicles-bg__grid-item:focus .section-chronicles-bg__grid-play {
+        opacity: 1
     }
 }
 
