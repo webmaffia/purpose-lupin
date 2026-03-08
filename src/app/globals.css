@@ -4093,15 +4093,10 @@ body.site-header-menu-open .site-header__hamburger-bar:nth-child(3) {
     justify-content: center;
     -webkit-border-radius: 1.04166666667vw;
     border-radius: 1.04166666667vw;
-    width: 29.1666666667vw;
-    min-width: 29.1666666667vw;
-    height: 32.1354166667vw;
-    min-height: 32.1354166667vw;
-    -webkit-flex-shrink: 0;
-    -ms-flex-negative: 0;
+
     flex-shrink: 0;
     overflow: hidden;
-    margin: 4.16666666667vw auto
+  
 }
 
 @media (min-width: 2000px) {

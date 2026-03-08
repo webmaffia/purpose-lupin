@@ -9,7 +9,7 @@ export default function LeaderBanner() {
         <picture>
           <source
             media="(max-width: 768px)"
-            srcSet="/images/leadership/banner/mobile.png"
+            srcSet="/images/leadership/banner/mobile1.png"
           />
           <Image
             className="leadership__hero-image"

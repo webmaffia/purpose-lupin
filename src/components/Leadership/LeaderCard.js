@@ -3,6 +3,7 @@ import Image from "next/image";
 
 export default function LeaderCard({ name, role, imageSrc, quote, onClick }) {
   return (
+    
     <div
       className="leadership__employee-card"
       role="button"
@@ -31,5 +32,8 @@ export default function LeaderCard({ name, role, imageSrc, quote, onClick }) {
         <p>{role}</p>
       </div>
     </div>
+    
+    
+    
   );
 }

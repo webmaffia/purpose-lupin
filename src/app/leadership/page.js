@@ -109,6 +109,7 @@ export default function LeaderCardPage() {
       <main>
         <LeaderBanner />
         <section className="leadership__employees-image-section">
+        <h1 className="hopes__mosaic-title">Our leadership</h1>
           <div
             className={`leadership__employees-image-container${showAll ? " show-all" : ""}`}
           >
@@ -163,7 +164,7 @@ export default function LeaderCardPage() {
               color: "#333",
             }}
           >
-            ×
+            <img src="/images/leadership/shapes/Group 400.png" class="leadership__modal-close" id="modalClose" alt="Close" />
           </button>
 
           {selectedLeader && (
@@ -186,6 +187,7 @@ export default function LeaderCardPage() {
               </div>
 
               <div className="leadership__modal-right">
+              <img src="/images/leadership/shapes/Vector (1).png" class="quote quote-top" alt="quote" />
                 <div className="modal-body">
                   <p>{selectedLeader.quote}</p>
                 </div>
@@ -193,6 +195,7 @@ export default function LeaderCardPage() {
                   <h4>{selectedLeader.name}</h4>
                   <span>{selectedLeader.role}</span>
                 </div>
+                <img src="/images/leadership/shapes/Vector (2).png" class="quote quote-bottom" alt="quote" />
               </div>
             </>
           )}

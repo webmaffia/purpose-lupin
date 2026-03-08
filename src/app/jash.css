@@ -1,7 +1,71 @@
+/* Core Commitments: show hover state by default on mobile */
+@media (max-width: 768px) {
+  .section-core__card--hover-image .section-core__card-bg,
+  .section-core__card--hover-image .section-core__card-overlay {
+    opacity: 1;
+  }
+  .section-core__card--hover-image .section-core__card-icon {
+    opacity: 0;
+  }
+  .section-core__card--hover-image .section-core__card-content {
+    margin-top: auto;
+  }
+  .section-core__card--hover-image .section-core__card-desc {
+    opacity: 1;
+    max-height: none;
+    width: 100%;
+    font-size: 3.38vw; /* ~14px at 414px viewport */
+  }
 
+  .leadership__hero-image {
+    height: 124.4vw; /* ~515px at 414px viewport */
+  }
+
+  .leadership__employee-card {
+    border-radius: 2.415vw; /* 10px at 414px viewport */
+  }
+
+  .leadership__employees-image-container {
+    gap: 2.415vw; /* 10px at 414px viewport */
+  }
+
+  .leadership__employees-image-section {
+    padding-top: 4.83vw; /* 20px at 414px viewport */
+  }
+
+  /* Show 8 cards by default; remaining cards visible when View All is toggled */
+  .leadership__employees-image-container .leadership__employee-card:nth-child(n+9) {
+    display: none;
+  }
+  .leadership__employees-image-container.show-all .leadership__employee-card:nth-child(n+9) {
+    display: revert;
+  }
+
+  .leadership__view-btn {
+    font-size: 3.38vw; /* 14px at 414px viewport */
+    margin: 4.83vw auto; /* 20px at 414px viewport */
+  }
+}
+
+/* Hide View All button on desktop (mobile only) */
+@media (min-width: 769px) {
+  .leadership__button-wrapper {
+    display: none;
+  }
+}
+
+.leadership__modal-content {
+  overflow-y: hidden;
+  padding: 4.16667vw; /* 80px at 1920px viewport */
+}
 @media (max-width: 414px) {
   .section-chronicles-bg__grid-avatar {
     width: 100%;
     height: 100%;
   }
+  .leadership__modal-content {
+    overflow-y:auto ;
+    padding: 0;
 }
+}
+
