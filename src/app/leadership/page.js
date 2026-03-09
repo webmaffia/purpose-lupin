@@ -42,7 +42,7 @@ const leaders = [
       "We’re building a resilient, digitized, and customer-centric supply chain - one that not only meets evolving regulatory requirements but stays anchored in improving patient outcomes worldwide.",
   },
   {
-    name: "Ranjana Pathak",
+    name: "Dr. Ranjana Pathak",
     role: "Chief Quality Officer",
     imageSrc: "/images/leadership/Dr Ranjana Pathak.png",
     quote:
