@@ -37,7 +37,7 @@ const leaders = [
   {
     name: "CHRISTOPH FUNKE",
     role: "Chief Technical Operations Officer",
-    imageSrc: "/images/leadership/CHRISTOPH FUNKE.png",
+    imageSrc: "/images/leadership/Christoph Funke1.png",
     quote:
       "We’re building a resilient, digitized, and customer-centric supply chain - one that not only meets evolving regulatory requirements but stays anchored in improving patient outcomes worldwide.",
   },
@@ -93,7 +93,7 @@ const leaders = [
   {
     name: "Cyrus Karkaria",
     role: "President, Biotech Business",
-    imageSrc: "/images/leadership/Cyrus Karkaria (4).png",
+    imageSrc: "/images/leadership/Cyrus karkaria (5).png",
     quote:
       "We invest in purpose-driven science. Our work in biosimilars focuses on making cutting-edge biologics more accessible – transforming hope into healing for patients around the world.",
   },
