@@ -183,3 +183,8 @@
   height: 100%;
   object-fit: cover;
 }
+
+.section-core__text-bg {
+  width: 20.833vw;  /* 400px at 1920px viewport */
+  height: 20.833vw; /* 400px at 1920px viewport */
+}
