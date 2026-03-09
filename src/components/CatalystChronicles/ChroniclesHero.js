@@ -3,7 +3,13 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 
-export default function ChroniclesHero() {
+const DEFAULT_POSTER = "/images/catylist/poster.png";
+const DEFAULT_VIDEO = "/videos/3-Our-Purpose-Standalone-High-Resolution.mp4";
+
+export default function ChroniclesHero({ hero }) {
+  const posterUrl = hero?.posterUrl || DEFAULT_POSTER;
+  const videoUrl = hero?.videoUrl || DEFAULT_VIDEO;
+
   const desktopVideoRef = useRef(null);
   const mobileVideoRef = useRef(null);
   const pauseButtonRef = useRef(null);
@@ -31,32 +37,36 @@ export default function ChroniclesHero() {
 
   return (
     <section className={`hero ${isPlaying ? "is-playing" : ""}`}>
-      <div className="hero__poster hero__poster--catalyst" />
+      <div className="hero__poster hero__poster--catalyst">
+        <Image
+          src={posterUrl}
+          alt=""
+          fill
+          className="hero__poster-img"
+          sizes="100vw"
+          priority
+          unoptimized={posterUrl.startsWith("http")}
+        />
+      </div>
       <video
         ref={desktopVideoRef}
         className="hero__video hero__video--desktop"
-        poster="/images/catylist/poster.png"
+        poster={posterUrl}
         playsInline
         muted
         loop
       >
-        <source
-          src="/videos/3-Our-Purpose-Standalone-High-Resolution.mp4"
-          type="video/mp4"
-        />
+        <source src={videoUrl} type="video/mp4" />
       </video>
       <video
         ref={mobileVideoRef}
         className="hero__video hero__video--mobile"
-        poster="/images/catylist/poster.png"
+        poster={posterUrl}
         playsInline
         muted
         loop
       >
-        <source
-          src="/videos/3-Our-Purpose-Standalone-High-Resolution.mp4"
-          type="video/mp4"
-        />
+        <source src={videoUrl} type="video/mp4" />
       </video>
       <button
         type="button"

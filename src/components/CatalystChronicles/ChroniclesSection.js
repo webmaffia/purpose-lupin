@@ -5,19 +5,13 @@ import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
 
 const MOTION_DUR = 25;
-const PROFILES = [
-  { image: "/images/catylist/infinite/new/New folder/Ana_Cardoso.png", dataBegin: 0, video: "/videos/cytalist/Ana Cardoso video.mp4" },
-  { image: "/images/catylist/infinite/new/New folder/Asif_Mazumder.png", dataBegin: 2.78, video: "/videos/cytalist/Asif Mazumder video_01.mp4" },
-  { image: "/images/catylist/infinite/new/New folder/Eduardo_Almada.png", dataBegin: 5.56, video: "/videos/cytalist/Eduardo Almada video1.mp4" },
-  { image: "/images/catylist/infinite/new/New folder/Ilse _Cabrera.png", dataBegin: 8.33, video: "/videos/cytalist/Ilse Cabrera video.mp4" },
-  { image: "/images/catylist/infinite/new/New folder/Jeanne_Marie Patterson.png", dataBegin: 11.11, video: "/videos/cytalist/Jeanne-Marie Patterson video.mp4" },
-  { image: "/images/catylist/infinite/new/New folder/Maria_Cousins.png", dataBegin: 13.89, video: "/videos/cytalist/Maria Cousins video_1.mp4" },
-  { image: "/images/catylist/infinite/new/New folder/Matthew_Duggan.png", dataBegin: 16.67, video: "/videos/cytalist/Matthew Duggan video.mp4" },
-  { image: "/images/catylist/infinite/new/New folder/Mukul_Jerath.png", dataBegin: 19.44, video: "/videos/cytalist/Mukul Jerath video.mp4" },
-  { image: "/images/catylist/infinite/new/New folder/yolanda.png", dataBegin: 22.22, video: "/videos/cytalist/Yolanda Cervantes video.mp4" },
-];
 
-export default function ChroniclesSection({ onProfileClick }) {
+
+export default function ChroniclesSection({ catalyst, onProfileClick }) {
+  const profiles = catalyst?.loop?.length ? catalyst.loop : FALLBACK_PROFILES;
+  const heading = catalyst?.heading ?? "CATALYST CHRONICLES";
+  const subheading = catalyst?.subheading ?? "Watch more";
+  const description = catalyst?.description ?? "";
   const svgRef = useRef(null);
   const pathRef = useRef(null);
   const [unionReady, setUnionReady] = useState(false);
@@ -99,16 +93,11 @@ export default function ChroniclesSection({ onProfileClick }) {
     <section className="section-chronicles-bg">
       <div className="section-chronicles-bg__svg" aria-hidden="true" />
       <div className="section-chronicles-bg__inner">
-        <p className="section-chronicles-bg__eyebrow">Watch more</p>
-        <h2 className="section-chronicles-bg__title">CATALYST CHRONICLES</h2>
-        <p className="section-chronicles-bg__text">
-          A purpose-driven journey of over five decades—improving lives, building
-          sustainability, and delivering long-term value to our stakeholders.
-          When you find your WHY, you find a WAY to make it happen. Our founder,
-          Dr. Desh Bandhu Gupta, discovered our &apos;why&apos; and established
-          our mission—to ensure that no one is left without the quality care
-          they deserve.
-        </p>
+        <p className="section-chronicles-bg__eyebrow">{subheading}</p>
+        <h2 className="section-chronicles-bg__title">{heading}</h2>
+        {description && (
+          <p className="section-chronicles-bg__text">{description}</p>
+        )}
         <Link href="#videos" className="section-chronicles-bg__cta">
           videos below!
         </Link>
@@ -235,9 +224,9 @@ export default function ChroniclesSection({ onProfileClick }) {
             d="M211.438 30.4402C313.881 -14.2701 438.372 -15.8836 561.418 67.488C741.408 189.443 868.652 361.722 965.121 462.331C1017.01 516.448 1060.57 552.214 1104.01 571.687C1143.78 589.519 1188.74 596.069 1250.13 580.233C1279.07 572.771 1316.31 543.937 1343.15 493.063C1369.48 443.162 1376.72 388.599 1364.84 346.722L1462.48 319.016L1560.13 291.311C1589.25 393.934 1567.74 502.422 1522.69 587.795C1478.16 672.196 1401.4 750.862 1300.83 776.801C1196.48 803.714 1104.25 794.264 1020.96 756.924C941.335 721.225 875.955 662.647 818.596 602.827C696.565 475.56 604.058 341.59 447.549 235.545C386.407 194.117 336.147 197.503 292.638 216.493C243.11 238.109 198.728 282.788 171.967 325.452L0 217.581C42.2383 150.245 115.013 72.5237 211.438 30.4402Z"
             fill=""
           />
-          {PROFILES.map((profile, i) => (
+          {profiles.map((profile, i) => (
             <g
-              key={i}
+              key={profile.id ?? i}
               className={`section-chronicles-bg__profile-wrap${unionReady ? " is-visible" : ""}`}
               data-begin={profile.dataBegin}
               role="button"
@@ -292,9 +281,9 @@ export default function ChroniclesSection({ onProfileClick }) {
         </div>
         {/* Mobile: 3-column grid (visible only on mobile) */}
         <div className="section-chronicles-bg__grid">
-          {PROFILES.map((profile, i) => (
+          {profiles.map((profile, i) => (
             <button
-              key={i}
+              key={profile.id ?? i}
               type="button"
               className="section-chronicles-bg__grid-item js-chronicles-play"
               aria-label="Play video"
@@ -309,6 +298,7 @@ export default function ChroniclesSection({ onProfileClick }) {
                   alt=""
                   width={90}
                   height={90}
+                  unoptimized={profile.image?.startsWith("http")}
                 />
               </span>
               <span className="section-chronicles-bg__grid-play" aria-hidden="true">

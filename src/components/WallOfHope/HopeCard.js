@@ -33,6 +33,7 @@ export default function HopeCard({
             width={400}
             height={500}
             loading="lazy"
+            unoptimized={imageSrc?.startsWith("http")}
           />
           <div className="hopes__mosaic-content">
             <h3>{name}</h3>
@@ -50,6 +51,7 @@ export default function HopeCard({
                 alt={name}
                 width={160}
                 height={160}
+                unoptimized={profileImg?.startsWith("http")}
               />
               <span className="hopes__mosaic-profile-name">{name}</span>
             </div>
