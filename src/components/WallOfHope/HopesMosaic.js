@@ -106,7 +106,8 @@ const HOPES_DATA = [
     role: "Quality Control",
     country: "Brazil",
     imageSrc: "/images/wall-of-hopes/devolpment Jpg/devolpment Jpg/Fabiana Goncalves 1.png",
-    profileImageSrc: "/images/wall-of-hopes/devolpment Jpg/devolpment Jpg/Fabiana Goncalves 1.png",
+    profileImageSrc: `${PROFILE_BASE}Fabiana Goncalves.png`,
+
     quote:
       '"Each product I analyze follows good manufacturing practices, ensuring patient safety and quality at every step. I am a Catalyst."',
     positionClass: "hopes__mosaic-item--bottom-right",
