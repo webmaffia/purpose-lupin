@@ -164,3 +164,22 @@
   text-align: right;
 }
 
+#devtools-indicator {
+  display: none !important;
+}
+
+.hero__poster--catalyst {
+  background-image: url("/images/catylist/poster.png");
+}
+
+.hero__poster--home {
+  background-image: url("/images/hero/poster.png");
+}
+
+.purpose-hero__poster-wrap .purpose-hero__poster-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

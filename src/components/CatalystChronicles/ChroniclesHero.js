@@ -31,10 +31,7 @@ export default function ChroniclesHero() {
 
   return (
     <section className={`hero ${isPlaying ? "is-playing" : ""}`}>
-      <div
-        className="hero__poster"
-        style={{ backgroundImage: "url('/images/catylist/poster.png')" }}
-      />
+      <div className="hero__poster hero__poster--catalyst" />
       <video
         ref={desktopVideoRef}
         className="hero__video hero__video--desktop"

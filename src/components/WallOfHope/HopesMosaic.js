@@ -448,7 +448,7 @@ const HOPES_DATA = [
     role: "Field Force",
     country: "India",
     imageSrc: "/images/wall-of-hopes/More/More/Sharad-Pardhi.png",
-    profileImageSrc: "/images/wall-of-hopes/More/More/Sharad-Pardhi.png",
+    profileImageSrc: `${PROFILE_BASE}Sharad Pardhi 1.png`,
     quote:
       '"Every time I step into a doctor\'s chamber, I do so with the confidence of representing quality products. That trust inspires better care for society. I am a Catalyst."',
     positionClass: "hopes__mosaic-item--bottom-left",
