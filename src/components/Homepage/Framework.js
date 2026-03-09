@@ -3,10 +3,7 @@ export default function Framework() {
   return (
     <>
       <section className="section-framework">
-        <div
-          className="section-framework__bg"
-          style={{backgroundImage: "url('/images/New folder/mountain.png')"}}
-        ></div>
+        <div className="section-framework__bg section-framework__bg--mountain" />
         <h2 className="section-framework__title">
           OUR GUIDING
           <br />

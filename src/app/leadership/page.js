@@ -155,16 +155,9 @@ export default function LeaderCardPage() {
         >
           <button
             type="button"
-            className="leadership__modal-close"
+            className="leadership__modal-close leadership__modal-close-btn"
             onClick={() => setSelectedLeader(null)}
             aria-label="Close modal"
-            style={{
-              background: "none",
-              border: "none",
-              fontSize: "2.5vw",
-              lineHeight: 1,
-              color: "#333",
-            }}
           >
             <img src="/images/leadership/shapes/Group 400.png" class="leadership__modal-close" id="modalClose" alt="Close" />
           </button>

@@ -8,7 +8,7 @@ export async function proxy(request) {
   const cspHeader = [
     "default-src 'self'",
     `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${isDev ? " 'unsafe-eval'" : ""}`,
-    `style-src 'self' 'nonce-${nonce}'`,
+    `style-src 'self' 'nonce-${nonce}' 'sha256-zlqnbDt84zf1iSefLU/ImC54isoprH/MRiVZGskwexk=' 'unsafe-hashes'`,
     "img-src 'self' data: blob:",
     "font-src 'self'",
     "connect-src 'self'",

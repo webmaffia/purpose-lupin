@@ -13,12 +13,7 @@ export default function LoginPage() {
       <div className="login">
  
         <section className="login__hero">
-          <div
-            className="login__hero-bg"
-            style={{
-              backgroundImage: "url('/images/hero/login-banner.png')",
-            }}
-          />
+          <div className="login__hero-bg login__hero-bg--banner" />
           <Link href="/" className="login__logo" aria-label="Lupin Home">
             <Image
               src="/images/logo.svg"
