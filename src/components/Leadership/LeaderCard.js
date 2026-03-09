@@ -26,6 +26,7 @@ export default function LeaderCard({ name, role, imageSrc, quote, onClick }) {
         alt={name}
         width={560}
         height={617}
+        unoptimized={imageSrc?.startsWith("http")}
       />
       <div className="leadership__employee-info">
         <h4>{name}</h4>
