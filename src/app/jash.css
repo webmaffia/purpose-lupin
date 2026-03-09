@@ -103,9 +103,9 @@
   }
 }
 
-/* Hide View All button on desktop (mobile only) */
+/* Hide View All button on desktop unless more than 9 items */
 @media (min-width: 769px) {
-  .leadership__button-wrapper {
+  .leadership__button-wrapper:not(.leadership__button-wrapper--show-on-desktop) {
     display: none;
   }
 }

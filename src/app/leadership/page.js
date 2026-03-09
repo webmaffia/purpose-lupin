@@ -128,7 +128,9 @@ export default function LeaderCardPage() {
             ))}
           </div>
         </section>
-        <div className="leadership__button-wrapper">
+        <div
+          className={`leadership__button-wrapper${leaders.length > 9 ? " leadership__button-wrapper--show-on-desktop" : ""}`}
+        >
           <button
             type="button"
             className="leadership__view-btn"
