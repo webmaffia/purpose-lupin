@@ -21,7 +21,7 @@ export default function Purpose() {
               Our leaders share how our purpose guides every decision and drives
               us to create meaningful impact.
             </p>
-            <Link href="#" className="section-action__btn">
+            <Link href="/leadership" className="section-action__btn">
               Click here to explore!
             </Link>
           </article>
