@@ -2,7 +2,13 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 
-export default function HeroBanner() {
+const DEFAULT_POSTER = "/images/hero/poster.png";
+const DEFAULT_VIDEO = "/videos/3-Our-Purpose-Standalone-High-Resolution.mp4";
+
+export default function HeroBanner({ hero }) {
+  const posterUrl = hero?.posterUrl || DEFAULT_POSTER;
+  const videoUrl = hero?.videoUrl || DEFAULT_VIDEO;
+
   const desktopVideoRef = useRef(null);
   const mobileVideoRef = useRef(null);
   const pauseButtonRef = useRef(null);
@@ -34,33 +40,37 @@ export default function HeroBanner() {
   return (
     <>
       <section className={`hero ${isPlaying ? "is-playing" : ""}`}>
-        <div className="hero__poster hero__poster--home" />
+        <div className="hero__poster hero__poster--home">
+          <Image
+            src={posterUrl}
+            alt=""
+            fill
+            className="hero__poster-img"
+            sizes="100vw"
+            priority
+            unoptimized={posterUrl.startsWith("http")}
+          />
+        </div>
         {/* Desktop video: shown above 414px  */}
         <video
           ref={desktopVideoRef}
           className="hero__video hero__video--desktop"
-          poster="/images/hero/poster.png"
+          poster={posterUrl}
           playsInline
           loop
         >
-          <source
-            src="/videos/3-Our-Purpose-Standalone-High-Resolution.mp4"
-            type="video/mp4"
-          />
+          <source src={videoUrl} type="video/mp4" />
         </video>
         {/* Mobile video: shown at 414px and below  */}
         <video
           ref={mobileVideoRef}
           className="hero__video hero__video--mobile"
-          poster="/images/hero/poster.png"
+          poster={posterUrl}
           playsInline
           muted
           loop
         >
-          <source
-            src="/videos/3-Our-Purpose-Standalone-High-Resolution.mp4"
-            type="video/mp4"
-          />
+          <source src={videoUrl} type="video/mp4" />
         </video>
         <button
           onClick={handlePlay}

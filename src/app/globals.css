@@ -659,7 +659,12 @@ body.site-header-menu-open .site-header__hamburger-bar:nth-child(3) {
     z-index: 1;
     -webkit-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease
-}
+  }
+
+.hero__poster-img {
+    object-fit: cover;
+    object-position: center;
+  }
 
 .hero__video {
     position: absolute;
@@ -1500,7 +1505,7 @@ body.site-header-menu-open .site-header__hamburger-bar:nth-child(3) {
     position: relative;
     width: 100%;
     max-width: 100%;
-    min-height: 56.9270833333vw;
+    min-height: 55.9270833333vw;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1527,7 +1532,12 @@ body.site-header-menu-open .site-header__hamburger-bar:nth-child(3) {
     background-position: center;
     background-repeat: no-repeat;
     z-index: 0
-}
+  }
+
+.section-framework__bg-img {
+    object-fit: cover;
+    object-position: center;
+  }
 
 .section-framework__title {
     position: relative;
@@ -1948,6 +1958,11 @@ body.site-header-menu-open .site-header__hamburger-bar:nth-child(3) {
 .section-core__card-circle--hidden {
     display: none
 }
+
+.section-core__card--hover-image .section-core__card-bg-img {
+    object-fit: cover;
+    object-position: center;
+  }
 
 .section-core__card--hover-image .section-core__card-bg {
     position: absolute;

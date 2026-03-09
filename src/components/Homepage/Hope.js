@@ -1,7 +1,14 @@
-"use client"
+"use client";
 import Image from "next/image";
 
-export default function Hope() {
+const DEFAULT_IMAGE = "/images/New folder/happy-man-listening-music-park 1.png";
+
+export default function Hope({ hope }) {
+  const title = hope?.title ?? "WE CATALYZE TREATMENTS THAT TRANSFORM\nHOPE INTO\nHEALING";
+  const tagline = hope?.tagline ?? "We catalyze treatments that transform";
+  const description = hope?.description ?? "";
+  const imageUrl = hope?.imageUrl ?? DEFAULT_IMAGE;
+
   return (
     <>
       <section className="section-hope">
@@ -14,30 +21,34 @@ export default function Hope() {
             width="400"
             height="400"
           />
-          <p className="section-hope__tagline">
-            We catalyze treatments that transform
-          </p>
+
           <h2 className="section-hope__title">
-            HOPE INTO
-            <br />
-            HEALING
+            {title.split("\n").map((line, i) => (
+              <span key={i}>
+                {i > 0 && <br />}
+                {line}
+              </span>
+            ))}
           </h2>
-          <p className="section-hope__text">
-            A purpose-driven journey of over five decades, improving lives,
-            building sustainability, and delivering long-term value to our
-            stakeholders. When you find your WHY, you find a WAY to make it
-            happen. Our founder, Dr. Desh Bandhu Gupta, discovered our{" "}
-            <strong>why</strong> and established our mission to ensure that no
-            one is left without the quality care they deserve.
-          </p>
+          {description && (
+            <p className="section-hope__text">
+              {description.split("\n").map((line, i) => (
+                <span key={i}>
+                  {i > 0 && <br />}
+                  {line}
+                </span>
+              ))}
+            </p>
+          )}
         </div>
         <div className="section-hope__media">
           <Image
-            src="/images/New folder/happy-man-listening-music-park 1.png"
+            src={imageUrl}
             alt="Person enjoying music outdoors"
             className="section-hope__img"
             width="914"
             height="700"
+            unoptimized={imageUrl.startsWith("http")}
           />
         </div>
       </section>

@@ -4,13 +4,17 @@ import { NextResponse } from "next/server";
 export async function proxy(request) {
   const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
   const isDev = process.env.NODE_ENV === "development";
+  const strapiOrigin = process.env.NEXT_PUBLIC_STRAPI_URL
+    ? new URL(process.env.NEXT_PUBLIC_STRAPI_URL).origin
+    : "http://localhost:1337";
 
   const cspHeader = [
     "default-src 'self'",
     `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${isDev ? " 'unsafe-eval'" : ""}`,
-    `style-src 'self' 'nonce-${nonce}' 'sha256-zlqnbDt84zf1iSefLU/ImC54isoprH/MRiVZGskwexk=' 'unsafe-hashes'`,
-    "img-src 'self' data: blob:",
+    `style-src 'self' 'nonce-${nonce}' 'sha256-zlqnbDt84zf1iSefLU/ImC54isoprH/MRiVZGskwexk=' 'unsafe-hashes' 'unsafe-inline'`,
+    `img-src 'self' data: blob: ${strapiOrigin}`,
     "font-src 'self'",
+    `media-src 'self' ${strapiOrigin}`,
     "connect-src 'self'",
     "frame-ancestors 'self'",
     "base-uri 'self'",

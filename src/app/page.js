@@ -16,19 +16,60 @@ export default async function Home() {
     redirect("/login");
   }
 
-  const data = await fetchStrapi("/api/homepage?populate[hero][populate]=*&populate[threeCore][populate]=*&populate[hope][populate]=*&populate[action][populate]=*&populate[framework][populate]=*")
+  const response = await fetchStrapi("/api/homepage?populate[hero][populate]=*&populate[threeCore][populate][threeCoreCard][populate]=*&populate[hope][populate]=*&populate[action][populate][actionCard][populate]=*&populate[framework][populate][frameworkCard][populate]=*");
+  const homepage = response?.data ?? null;
+  const baseUrl = process.env.NEXT_PUBLIC_STRAPI_URL || "";
 
-  console.log(data);
+  const hero = homepage?.hero
+    ? {
+        posterUrl: homepage.hero.poster?.url ? `${baseUrl}${homepage.hero.poster.url}` : null,
+        videoUrl: homepage.hero.video?.url ? `${baseUrl}${homepage.hero.video.url}` : null,
+      }
+    : null;
+
+  const hope = homepage?.hope
+    ? {
+        ...homepage.hope,
+        imageUrl: homepage.hope.image?.url ? `${baseUrl}${homepage.hope.image.url}` : null,
+      }
+    : null;
+
+  const framework = homepage?.framework
+    ? {
+        ...homepage.framework,
+        backgroundUrl: homepage.framework.background?.url ? `${baseUrl}${homepage.framework.background.url}` : null,
+      }
+    : null;
+
+  const threeCore = homepage?.threeCore
+    ? {
+        ...homepage.threeCore,
+        threeCoreCard: (homepage.threeCore.threeCoreCard ?? []).map((card) => ({
+          ...card,
+          iconUrl: card.icon?.url ? `${baseUrl}${card.icon.url}` : null,
+          imageUrl: card.image?.url ? `${baseUrl}${card.image.url}` : null,
+        })),
+      }
+    : null;
+
+  const action = homepage?.action
+    ? {
+        ...homepage.action,
+        actionCard: (homepage.action.actionCard ?? []).map((card) => ({
+          ...card,
+          iconUrl: card.icon?.url ? `${baseUrl}${card.icon.url}` : null,
+        })),
+      }
+    : null;
+
   return (
     <>
- 
-
       <main className="wrapper">
-        <HeroBanner />
-        <CoreCommitments />
-        <Hope />
-        <Purpose />
-        <Framework />
+        <HeroBanner hero={hero} />
+        <CoreCommitments threeCore={threeCore} />
+        <Hope hope={hope} />
+        <Purpose action={action} />
+        <Framework framework={framework} />
       </main>
     </>
   );

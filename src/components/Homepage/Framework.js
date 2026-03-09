@@ -1,59 +1,45 @@
-"use client"
-export default function Framework() {
+"use client";
+
+import Image from "next/image";
+
+const DEFAULT_BG = "/images/New folder/mountain.png";
+
+export default function Framework({ framework }) {
+  const heading = framework?.heading ?? "OUR GUIDING\nFRAMEWORK";
+  const cards = framework?.frameworkCard ?? [];
+  const backgroundUrl = framework?.backgroundUrl || DEFAULT_BG;
+
   return (
     <>
       <section className="section-framework">
-        <div className="section-framework__bg section-framework__bg--mountain" />
+        <div className="section-framework__bg">
+          <Image
+            src={backgroundUrl}
+            alt=""
+            fill
+            className="section-framework__bg-img"
+            sizes="100vw"
+            unoptimized={backgroundUrl.startsWith("http")}
+          />
+        </div>
         <h2 className="section-framework__title">
-          OUR GUIDING
-          <br />
-          FRAMEWORK
+          {heading.split("\n").map((line, i) => (
+            <span key={i}>
+              {i > 0 && <br />}
+              {line}
+            </span>
+          ))}
         </h2>
         <div className="section-framework__circles">
-          <div className="section-framework__circle">
-            <span className="section-framework__circle-inner">
-              <span className="section-framework__circle-label">PURPOSE</span>
-              <span className="section-framework__circle-subtitle">
-                Our North Star
+          {cards.map((card, index) => (
+            <div key={card.id ?? index} className="section-framework__circle">
+              <span className="section-framework__circle-inner">
+                <span className="section-framework__circle-label">{card.title}</span>
+                <span className="section-framework__circle-subtitle">{card.subtitle}</span>
+                <span className="section-framework__circle-desc">{card.description?.trim()}</span>
               </span>
-              <span className="section-framework__circle-desc">
-                The very reason we exist beyond profit.
-              </span>
-            </span>
-          </div>
-          <div className="section-framework__circle">
-            <span className="section-framework__circle-inner">
-              <span className="section-framework__circle-label">VISION</span>
-              <span className="section-framework__circle-subtitle">
-                Our Future Ambition
-              </span>
-              <span className="section-framework__circle-desc">
-                Where we want to go and what we aspire to achieve.
-              </span>
-            </span>
-          </div>
-          <div className="section-framework__circle">
-            <span className="section-framework__circle-inner">
-              <span className="section-framework__circle-label">STRATEGY</span>
-              <span className="section-framework__circle-subtitle">
-                Our Driving Path
-              </span>
-              <span className="section-framework__circle-desc">
-                What we will do in the short term and the value we add.
-              </span>
-            </span>
-          </div>
-          <div className="section-framework__circle">
-            <span className="section-framework__circle-inner">
-              <span className="section-framework__circle-label">VALUES</span>
-              <span className="section-framework__circle-subtitle">
-                Our Core Beliefs
-              </span>
-              <span className="section-framework__circle-desc">
-                Attitudes that inform our behaviors and decisions.
-              </span>
-            </span>
-          </div>
+            </div>
+          ))}
         </div>
       </section>
     </>

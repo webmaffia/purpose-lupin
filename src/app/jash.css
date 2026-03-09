@@ -1,5 +1,25 @@
 /* Core Commitments: show hover state by default on mobile */
 @media (max-width: 768px) {
+  /* Direct images (replaced from background-image): ensure proper fit on mobile */
+  .hero__poster,
+  .section-core__card--hover-image .section-core__card-bg,
+  .section-framework__bg {
+    overflow: hidden;
+  }
+  .hero__poster .hero__poster-img,
+  .section-core__card--hover-image .section-core__card-bg .section-core__card-bg-img,
+  .section-framework__bg .section-framework__bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
   .section-core__card--hover-image .section-core__card-bg,
   .section-core__card--hover-image .section-core__card-overlay {
     opacity: 1;
@@ -280,4 +300,11 @@
   transform: translateX(1120px) rotateY(16deg) scale(0.72);
   z-index: 1;
   opacity: 0.08;
+}
+
+/* Hope section title: 85px at 1920 viewport */
+@media (min-width: 1920px) {
+  .section-hope__title {
+    font-size: 4.43vw; /* 85px at 1920px viewport */
+  }
 }
