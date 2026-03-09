@@ -21,7 +21,8 @@ export default async function Home() {
   console.log(data);
   return (
     <>
-      {/* Home */}
+ 
+
       <main className="wrapper">
         <HeroBanner />
         <CoreCommitments />

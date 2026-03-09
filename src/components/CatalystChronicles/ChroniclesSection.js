@@ -238,9 +238,8 @@ export default function ChroniclesSection({ onProfileClick }) {
           {PROFILES.map((profile, i) => (
             <g
               key={i}
-              className="section-chronicles-bg__profile-wrap"
+              className={`section-chronicles-bg__profile-wrap${unionReady ? " is-visible" : ""}`}
               data-begin={profile.dataBegin}
-              style={{ opacity: unionReady ? 1 : 0 }}
               role="button"
               tabIndex={0}
               onClick={(e) => {

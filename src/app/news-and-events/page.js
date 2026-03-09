@@ -156,19 +156,19 @@ export default function NewsAndEventsPage() {
             onTouchEnd={handleTouchEnd}
           >
             <div className="mobile-carousel">
-              {photoboothUrls.map((src, i) => (
-                <div
-                  key={i}
-                  className="mobile-card"
-                  style={{
-                    transform: `translateX(${(i - mobilePosition) * 280}px) rotateY(${(i - mobilePosition) * 4}deg) scale(${i === mobilePosition ? 1 : 0.72})`,
-                    zIndex: i === mobilePosition ? 10 : totalCards - Math.abs(i - mobilePosition),
-                    opacity: i === mobilePosition ? 1 : Math.abs(i - mobilePosition) === 1 ? 0.28 : 0.08,
-                  }}
-                >
-                  <img src={src} alt="" />
-                </div>
-              ))}
+              {photoboothUrls.map((src, i) => {
+                const offset = i - mobilePosition;
+                return (
+                  <div
+                    key={i}
+                    className="mobile-card"
+                    data-offset={offset}
+                    data-active={i === mobilePosition ? "true" : undefined}
+                  >
+                    <img src={src} alt="" />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

@@ -34,17 +34,13 @@ export default function HeroBanner() {
   return (
     <>
       <section className={`hero ${isPlaying ? "is-playing" : ""}`}>
-        <div
-          className="hero__poster"
-          style={{ backgroundImage: "url('/images/hero/poster.png')" }}
-        ></div>
+        <div className="hero__poster hero__poster--home" />
         {/* Desktop video: shown above 414px  */}
         <video
           ref={desktopVideoRef}
           className="hero__video hero__video--desktop"
           poster="/images/hero/poster.png"
           playsInline
-          muted
           loop
         >
           <source

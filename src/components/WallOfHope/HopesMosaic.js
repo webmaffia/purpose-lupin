@@ -56,7 +56,7 @@ const HOPES_DATA = [
   {
     name: "Awadhkishor Bhadoriya",
     role: "IT Operations",
-    country: "India",
+    country: "IT Operations",
     imageSrc: "/images/wall-of-hopes/devolpment Jpg/devolpment Jpg/Awadhkishor-Bhadoriya 2.png",
     profileImageSrc: `${PROFILE_BASE}Awadhkishor-Bhadoriya 1.png`,
     quote:
@@ -106,7 +106,8 @@ const HOPES_DATA = [
     role: "Quality Control",
     country: "Brazil",
     imageSrc: "/images/wall-of-hopes/devolpment Jpg/devolpment Jpg/Fabiana Goncalves 1.png",
-    profileImageSrc: "/images/wall-of-hopes/devolpment Jpg/devolpment Jpg/Fabiana Goncalves 1.png",
+    profileImageSrc: `${PROFILE_BASE}Fabiana Goncalves.png`,
+
     quote:
       '"Each product I analyze follows good manufacturing practices, ensuring patient safety and quality at every step. I am a Catalyst."',
     positionClass: "hopes__mosaic-item--bottom-right",
@@ -447,7 +448,7 @@ const HOPES_DATA = [
     role: "Field Force",
     country: "India",
     imageSrc: "/images/wall-of-hopes/More/More/Sharad-Pardhi.png",
-    profileImageSrc: "/images/wall-of-hopes/More/More/Sharad-Pardhi.png",
+    profileImageSrc: `${PROFILE_BASE}Sharad Pardhi 1.png`,
     quote:
       '"Every time I step into a doctor\'s chamber, I do so with the confidence of representing quality products. That trust inspires better care for society. I am a Catalyst."',
     positionClass: "hopes__mosaic-item--bottom-left",

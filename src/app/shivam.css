@@ -1,0 +1,101 @@
+/* SHIVAM */
+/* Purpose Highlights */
+.purpose-hero__media {
+  width: 67.865vw;
+  height: 38.281vw;
+}
+
+.svg {
+  width: 100%;
+}
+
+.purpose-hero__media .hero__poster, .purpose-hero__media .hero__video{
+  border-radius: 0;
+}
+
+@media (max-width: 768px) {
+  .svg img {
+    max-width: 66.5vw;
+  }
+  .paint-purpose__content {
+    height: 32vw;
+  }
+}
+
+@media (max-width: 414px) {
+  .purpose-hero__media {
+    width: 100%;
+    height: 100%;
+  }
+  .purpose-hero {
+    padding: 2.521vw;
+  }
+  .purpose-hero .hero__play-wrap-inner,
+  .purpose-hero .hero__pause-wrap-inner {
+    width: 8.333vw;
+    height: 8.333vw;
+  }
+
+  .svg img {
+    max-width: 92.5vw;
+  }
+}
+
+/* Homepage */
+@media (max-width: 768px) {
+  .section-core img {
+    left: 0;
+    max-width: 30%;
+  }
+}
+
+.section-framework__circle-inner {
+  display: flex;
+}
+
+.section-framework__circle-label {
+  margin: auto;
+}
+
+.section-framework__circle-subtitle {
+  margin: auto;
+}
+
+.section-framework__circle-desc {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .section-core img {
+    opacity: 1;
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0.5vw;
+    left: 6.3646vw;
+  }
+  .section-core__title {
+    line-height: 1;
+  }
+}
+@media (max-width: 414px) {
+  .section-core img {
+    opacity: 1;
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 2.5vw;
+    left: 8.1646vw;
+  }
+  .section-core__title {
+    line-height: 1;
+  }
+}
+
+/* Leadership */
+
+@media (max-width: 768px) {
+  .leadership__hero-image {
+    height: 96.6184vw;
+  }
+}

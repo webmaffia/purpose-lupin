@@ -29,10 +29,9 @@ export default function CoreCommitments() {
               height="550"
             />
             <div
-              className="section-core__card-bg"
-              style={{backgroundImage: "url('/images/core/hand.png')"}}
+              className="section-core__card-bg section-core__card-bg--hand"
               aria-hidden="true"
-            ></div>
+            />
             <div
               className="section-core__card-overlay"
               aria-hidden="true"
@@ -71,10 +70,9 @@ export default function CoreCommitments() {
               height="550"
             />
             <div
-              className="section-core__card-bg"
-              style={{backgroundImage: "url('/images/core/innovating.webp')"}}
+              className="section-core__card-bg section-core__card-bg--innovating"
               aria-hidden="true"
-            ></div>
+            />
             <div
               className="section-core__card-overlay"
               aria-hidden="true"
@@ -113,10 +111,9 @@ export default function CoreCommitments() {
               height="550"
             />
             <div
-              className="section-core__card-bg"
-              style={{backgroundImage: "url('/images/core/solutions.webp')"}}
+              className="section-core__card-bg section-core__card-bg--solutions"
               aria-hidden="true"
-            ></div>
+            />
             <div
               className="section-core__card-overlay"
               aria-hidden="true"
