@@ -44,7 +44,6 @@ export default function HeroBanner() {
           className="hero__video hero__video--desktop"
           poster="/images/hero/poster.png"
           playsInline
-          muted
           loop
         >
           <source

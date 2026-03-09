@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "./jash.css";
+import "./shivam.css"
 import LayoutShell from "@/components/LayoutShell";
 
 const inter = Inter({

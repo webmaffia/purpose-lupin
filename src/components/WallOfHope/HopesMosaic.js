@@ -56,7 +56,7 @@ const HOPES_DATA = [
   {
     name: "Awadhkishor Bhadoriya",
     role: "IT Operations",
-    country: "India",
+    country: "IT Operations",
     imageSrc: "/images/wall-of-hopes/devolpment Jpg/devolpment Jpg/Awadhkishor-Bhadoriya 2.png",
     profileImageSrc: `${PROFILE_BASE}Awadhkishor-Bhadoriya 1.png`,
     quote:
