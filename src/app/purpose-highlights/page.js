@@ -120,11 +120,9 @@ export default function PurposeHighlightsPage() {
 
         <section className="hero purpose-hero" ref={heroSectionRef}>
           <div className="purpose-hero__media">
-            <div
-              className="hero__poster"
-              id="purpose-hero-poster"
-              style={{ backgroundImage: `url('${posterSrc}')` }}
-            />
+            <div className="hero__poster purpose-hero__poster-wrap" id="purpose-hero-poster">
+              <img src={posterSrc} alt="" className="purpose-hero__poster-img" />
+            </div>
             <video
               ref={desktopVideoRef}
               className="hero__video hero__video--desktop"

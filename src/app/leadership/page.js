@@ -8,7 +8,7 @@ import LeaderCard from "@/components/Leadership/LeaderCard";
 const leaders = [
   {
     name: "Manju Deshbandhu Gupta",
-    role: "Chief Technical Operations Officer",
+    role: "Chairperson",
     imageSrc: "/images/leadership/Manju Deshbandhu Gupta.png",
     quote:
       "Driven by our commitment to business excellence and innovation, our goal is to be a trusted partner for quality medicines, transforming hope into healing.",
@@ -42,7 +42,7 @@ const leaders = [
       "We’re building a resilient, digitized, and customer-centric supply chain - one that not only meets evolving regulatory requirements but stays anchored in improving patient outcomes worldwide.",
   },
   {
-    name: "Ranjana Pathak",
+    name: "Dr. Ranjana Pathak",
     role: "Chief Quality Officer",
     imageSrc: "/images/leadership/Dr Ranjana Pathak.png",
     quote:
