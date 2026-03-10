@@ -123,7 +123,7 @@ export default function NewsAndEventsPage() {
 
       <section className="purpose-photobooth">
         <div className="purpose-photobooth__header">
-          <h2>PURPOSE PHOTOBOOTH</h2>
+          <h2 className="hopes__mosaic-title">PURPOSE PHOTOBOOTH</h2>
         </div>
         <div className="purpose-photobooth__content">
           <div className="purpose-photobooth__filters">

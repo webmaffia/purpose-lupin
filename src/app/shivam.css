@@ -9,8 +9,13 @@
   width: 100%;
 }
 
-.purpose-hero__media .hero__poster, .purpose-hero__media .hero__video{
+.purpose-hero__media .hero__poster,
+.purpose-hero__media .hero__video {
   border-radius: 0;
+}
+
+.section-hope__title {
+  font-size: 3.5vw;
 }
 
 @media (max-width: 768px) {
@@ -19,6 +24,27 @@
   }
   .paint-purpose__content {
     height: 32vw;
+  }
+  .section-hope__title {
+    font-size: 5.5vw;
+  }
+  .section-hope__half-circle {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform-origin: center;
+  }
+
+  @keyframes pulse-scale-half-circle {
+    0% {
+      transform: translate(-50%, -50%) rotate(90deg) scale(1.5);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(90deg) scale(1.6);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(90deg) scale(1.5);
+    }
   }
 }
 
@@ -38,6 +64,20 @@
 
   .svg img {
     max-width: 92.5vw;
+  }
+  .section-hope__title {
+    font-size: 7.5vw;
+  }
+  @keyframes pulse-scale-half-circle {
+    0% {
+      transform: translate(-50%, -50%) rotate(90deg) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(90deg) scale(1.1);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(90deg) scale(1);
+    }
   }
 }
 
@@ -97,5 +137,33 @@
 @media (max-width: 768px) {
   .leadership__hero-image {
     height: 96.6184vw;
+  }
+  .leadership__modal-right h4 {
+    max-width: 100%;
+  }
+  .modal-footer {
+    line-height: normal;
+  }
+}
+
+/* Footer */
+
+@media (max-width: 414px) {
+  .footer__contact {
+    flex-flow: row wrap;
+  }
+  .footer__bottom {
+    align-items: center;
+  }
+}
+
+/* Purpose Higlights */
+.purpose-hero .hero__play {
+  object-fit: contain;
+}
+@media (max-width: 414px) {
+  .purpose-hero__media {
+    width: 67.865vw;
+    height: 38.281vw;
   }
 }

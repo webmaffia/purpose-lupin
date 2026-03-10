@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 
 export default function Hope() {
@@ -14,13 +14,9 @@ export default function Hope() {
             width="400"
             height="400"
           />
-          <p className="section-hope__tagline">
-            We catalyze treatments that transform
-          </p>
           <h2 className="section-hope__title">
-            HOPE INTO
-            <br />
-            HEALING
+            WE CATALYZE TREATMENTS THAT TRANSFORM
+            <br /> HOPE INTO HEALING
           </h2>
           <p className="section-hope__text">
             A purpose-driven journey of over five decades, improving lives,
